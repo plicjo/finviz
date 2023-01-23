@@ -9,8 +9,8 @@ module Finviz
   # Async way to fetch the data
   class Crawler
     class << self
-      def call(*args)
-        new(*args).tap(&:fetch).result
+      def call(*_args, **kwargs)
+        new(**kwargs).tap(&:fetch).result
       end
     end
 
